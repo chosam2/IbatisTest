@@ -43,8 +43,28 @@
 			,mem_addr = #mem_addr#
 		where mem_id = #mem_id# 	 	
 	 </update>
+	 
+	 <!-- delete 연습 -->
+	 <delete id="deleteMember" parameterClass="String">
+	 
+	 delete from mymember where mem_id = #mem_id# <!-- ##안에 아무거다 적어도 됨 -->
 
-
+	</delete>
+	
+	<!-- select 연습 -->
+	<select id="getAllMemberList" resultClass="memVO">
+	
+		select * from mymember
+		
+		
+	</select>
+	
+	<select id="getMember" parameterClass="String" resultClass="memVO">
+	
+		select * from mymember where mem_id = #mem_id#
+		
+	</select>
+	
 </sqlMap>			
 
 

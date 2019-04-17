@@ -26,45 +26,8 @@
 									(보통 VO클래스나 자바의 자료형이름을 사용한다.)							 
 	 -->
 	 
-	 <!-- insert 연습 -->
-	 <insert id="insertMember" parameterClass="kr.or.ddit.vo.MemberVO">	<!-- MemberIbatisTest에서 선언해준 insertMember -->
-	 
-		insert into mymember (mem_id, mem_name, mem_tel, mem_addr) 
-		values (#mem_id#, #mem_name#, #mem_tel#, #mem_addr#)
-		
-	 </insert>	
-	 
-	 <!-- update 연습 -->
-	 <update id="updateMember" parameterClass="memVO">
 
-		update mymember 
-		set mem_name = #mem_name#
-			,mem_tel = #mem_tel# 
-			,mem_addr = #mem_addr#
-		where mem_id = #mem_id# 	 	
-	 </update>
-	 
-	 <!-- delete 연습 -->
-	 <delete id="deleteMember" parameterClass="String">
-	 
-	 delete from mymember where mem_id = #mem_id# <!-- ##안에 아무거다 적어도 됨 -->
 
-	</delete>
-	
-	<!-- select 연습 -->
-	<select id="getAllMemberList" resultClass="memVO">
-	
-		select * from mymember
-		
-		
-	</select>
-	
-	<select id="getMember" parameterClass="String" resultClass="memVO">
-	
-		select * from mymember where mem_id = #mem_id#
-		
-	</select>
-	
 </sqlMap>			
 
 

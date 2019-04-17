@@ -13,14 +13,15 @@
 	<!-- ibatis를 처리하기 위한 환경설정 부분 -->
 	<settings cacheModelsEnabled="true" enhancementEnabled="true"
 		lazyLoadingEnabled="true" maxRequests="32" maxSessions="10"
-		maxTransactions="5" useStatementNamespaces="true" />	<!-- Statement공간에 Namespace(package)를 만들어 놓는다. -->
+		maxTransactions="5" useStatementNamespaces="false" />	<!-- false하면 네임스페이스 안씀 -->    <!-- Statement공간에 Namespace(package)를 만들어 놓는다. -->
+		<!-- maxTransactions="5" useStatementNamespaces="true" /> --> 
 
 	<!-- 
 	VO클래스등의 이름이 패키지명까지 기술하면 길어지는데 이것을 간단히
 	표시하기 위해서 alias를 지정할 수 있다.
 	형식) <typeAlias alias="alias명" type="클래스의 풀네임"/>
 	 -->
-	<typeAlias alias="memVO" type="kr.or.ddit.vo.MemberVO"/>
+	<typeAlias alias="memVO" type="kr.or.ddit.member.vo.MemberVO"/>
 <!-- 	<typeAlias alias="memVO" type="ibatis.member.vo.MemberVO"/> -->
 
 	<!-- 
@@ -48,7 +49,7 @@
 
 	<!-- <sqlMap resource="basic/member.xml"/> -->
 	<!-- <sqlMap resource="ibatis/member/memberMain.xml"/> -->
-	<sqlMap resource="kr/or/ddit/basic/member.xml"/>
+	<sqlMap resource="kr/or/ddit/member/sql/member.xml"/>
 </sqlMapConfig>
 
 
